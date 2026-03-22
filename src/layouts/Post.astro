@@ -1,0 +1,20 @@
+---
+import Base from './Base.astro';
+const { frontmatter } = Astro.props;
+const date = new Date(frontmatter.date).toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+---
+<Base title={`${frontmatter.title} — KrishnaManeeshaDendukuri`}>
+  <div class="container">
+    <a href="/writing" class="back-link reveal reveal-1">← Writing</a>
+    <article class="prose">
+      <h1 class="reveal reveal-2">{frontmatter.title}</h1>
+      <p class="post-meta reveal reveal-2">{date} · {frontmatter.tag ?? 'essay'}</p>
+      <div class="reveal reveal-3">
+        <slot />
+      </div>
+    </article>
+    <div style="height: 4rem;"></div>
+  </div>
+</Base>

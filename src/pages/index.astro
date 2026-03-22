@@ -1,17 +1,93 @@
 ---
-
+import Base from '../layouts/Base.astro';
 ---
+<Base title="KrishnaManeeshaDendukuri — ML Researcher">
+  <div class="container">
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-label reveal reveal-1">ML Researcher · Audio × AI</p>
+      <h1 class="reveal reveal-2">
+        Building machines that<br/>
+        <em>hear, understand,</em><br/>
+        and create.
+      </h1>
+      <p class="hero-bio reveal reveal-3">
+        I work at the intersection of audio, music, and machine learning —
+        from generative models to search and recommendation systems.
+        Currently focused on making audio AI more expressive and accessible.
+      </p>
+      <div class="hero-links reveal reveal-4">
+        <a href="/KrishnaManeeshaDendukuri-resume.pdf" class="btn accent" target="_blank">Resume ↗</a>
+        <a href="/#projects" class="btn">Projects</a>
+        <a href="/writing" class="btn">Writing</a>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="reveal reveal-4">
+      <div class="section-label">Selected work</div>
+      <div class="projects-grid">
+
+        <a href="https://github.com/KrishnaManeeshaDendukuri" target="_blank" class="project-card">
+          <div class="project-top">
+            <div>
+              <p class="project-name">Subjective Audio Search</p>
+              <p class="project-desc">A search and recommendation system for highly subjective audio queries, combining semantic embeddings with user preference signals.</p>
+            </div>
+            <span class="project-arrow">↗</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">RecSys</span>
+            <span class="tag">Audio</span>
+            <span class="tag">Search</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/KrishnaManeeshaDendukuri" target="_blank" class="project-card">
+          <div class="project-top">
+            <div>
+              <p class="project-name">Generative Audio Research</p>
+              <p class="project-desc">Exploring diffusion and state space models for high-fidelity music generation with controllable structure and timbre.</p>
+            </div>
+            <span class="project-arrow">↗</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Diffusion</span>
+            <span class="tag">SSM</span>
+            <span class="tag">Music Gen</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/KrishnaManeeshaDendukuri" target="_blank" class="project-card">
+          <div class="project-top">
+            <div>
+              <p class="project-name">Inference Optimization</p>
+              <p class="project-desc">Profiling and accelerating inference for large audio models — attention bottlenecks, KV-cache strategies, and audio-specific constraints.</p>
+            </div>
+            <span class="project-arrow">↗</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Optimization</span>
+            <span class="tag">Transformers</span>
+            <span class="tag">PyTorch</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Writing preview -->
+    <section class="reveal reveal-5">
+      <div class="section-label">Writing</div>
+      <div class="writing-list">
+        <a href="/writing" class="writing-item">
+          <span class="writing-date">—</span>
+          <span class="writing-title">Essays and notes on audio AI, research, and building things.</span>
+          <span class="writing-tag">View all →</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</Base>

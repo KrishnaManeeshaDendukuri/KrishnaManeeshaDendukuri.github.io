@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+const posts = Object.values(import.meta.glob('./writing/*.md', { eager: true }));
+const sorted = posts.sort((a, b) =>
+  new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
+);
+---
+<Base title="Writing — KrishnaManeeshaDendukuri">
+  <div class="container">
+    <div class="page-header reveal reveal-1">
+      <h1>Writing</h1>
+      <p>Notes on audio AI, research, search systems, and all kinds of occasional tangents.</p>
+    </div>
+
+    <div class="writing-list reveal reveal-2">
+      {sorted.length === 0 ? (
+        <div style="padding: 2rem 0; color: var(--ink-muted); font-size: 0.95rem; font-style: italic;">
+          First essay coming soon.
+        </div>
+      ) : (
+        sorted.map(post => (
+          <a href={post.url} class="writing-item">
+            <span class="writing-date">
+              {new Date(post.frontmatter.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+            </span>
+            <span class="writing-title">{post.frontmatter.title}</span>
+            <span class="writing-tag">{post.frontmatter.tag ?? 'essay'}</span>
+          </a>
+        ))
+      )}
+    </div>
+  </div>
+</Base>

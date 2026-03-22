@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+const { title = 'Alice' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ML researcher working at the intersection of audio, music, and AI." />
+  <title>{title}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <div id="cursor"></div>
+
+  <div class="container">
+    <nav>
+      <a href="/" class="nav-name">Krishna Maneesha Dendukuri</a>
+      <ul class="nav-links">
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/writing">Writing</a></li>
+        <li><a href="mailto:krishnamaneeshad@gmail.com">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <slot />
+
+  <div class="container">
+    <footer>
+      <p>© 2025 Alice</p>
+      <div class="footer-links">
+        <a href="https://github.com/KrishnaManeeshaDendukuri" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/KrishnaManeeshaDendukuri" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.com" target="_blank">Scholar</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+    });
+  </script>
+</body>
+</html>
